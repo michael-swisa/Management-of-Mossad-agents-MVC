@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ManagementOfMossadAgentsMVC.Models.TaskManagementForView>
+
+@{
+    ViewData["Title"] = "GetMissions";
+}
+
+<h1>GetMissions</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.XAgent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YAgent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TargetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionTarget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.XTarget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YTarget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeLeft)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XAgent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YAgent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TargetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionTarget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XTarget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YTarget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeLeft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+            <td>
+                    @Html.ActionLink("ציוות למשימה", "CommandForMission", new { id = item.IdMission })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<script>
+    setTimeout(function () {
+        location.reload();
+    }, 3000);
+</script>
