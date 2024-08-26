@@ -84,5 +84,25 @@ namespace ManagementOfMossadAgentsMVC.Controllers
 
             return RedirectToAction("Index");
         }
+
+        // הבאת כל הסוכנים עם פרטי המשימה אם יש פעילה
+        public async Task<IActionResult> GetAgents()
+        {
+            List<AgentForView>? agents = await this._httpClient.GetFromJsonAsync<
+                List<AgentForView>
+            >("http://localhost:5176/Agents/agentForView");
+
+            return View(agents);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetOneMission(int id)
+        {
+            MissionForView? OneMission = await this._httpClient.GetFromJsonAsync<MissionForView>(
+                $"http://localhost:5176/GetOneMission/{id}"
+            );
+
+            return View(OneMission);
+        }
     }
 }

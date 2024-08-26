@@ -21,11 +21,13 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li><li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetAgents">Agents</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Targets">Targets</a>
                         </li><li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetMissions">GetMissions</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetMissions">Missions</a>
                         </li>
                     </ul>
                 </div>
@@ -40,7 +42,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - ManagementOfMossadAgentsMVC - <a asp-area="" asp-controller="Home" asp-action="Targets">Targets</a>
+            &copy; 2024 - ManagementOfMossadAgentsMVC - <a asp-area="" asp-controller="Home" asp-action="GetMissions">Missions</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
