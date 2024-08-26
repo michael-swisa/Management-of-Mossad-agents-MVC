@@ -20,14 +20,14 @@ namespace ManagementOfMossadAgentsMVC.Controllers
             _httpClient = httpClient;
         }
 
-        // הצגת כמןיות
+        // הצגת כמויות
         public async Task<IActionResult> Index()
         {
-            var response = await this._httpClient.GetFromJsonAsync<GeneralView>(
-                "http://localhost:5176/GeneralView/GetGeneral"
+            var generalViews = await this._httpClient.GetFromJsonAsync<GeneralView>(
+                "http://localhost:5176/GeneralView"
             );
 
-            return View(response);
+            return View(generalViews);
         }
 
         // הצגת כל המטרות
