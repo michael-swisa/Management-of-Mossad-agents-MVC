@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 
 // הזרקת ה HttpClient
 builder.Services.AddHttpClient();
+
 builder.Services.AddSingleton<HttpClient>();
 
 var app = builder.Build();
